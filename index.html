@@ -322,7 +322,6 @@
 <nav aria-label="Primary">
   <div class="wrap">
     <a href="#about">About</a>
-    <a href="#pipeline">How I work</a>
     <a href="#results">Selected work</a>
     <a href="#projects">Projects</a>
     <a href="#experience">Experience</a>
@@ -341,38 +340,6 @@
       <p>I care most about AI systems engineering — reliable software that connects data, models, and production-facing APIs, built the way I'd want to hand it off to someone else.</p>
     </div>
     <span class="stat-chip">Top <b>2%</b> of KIITEE 2023 · 50,000+ applicants · Merit Scholarship</span>
-  </section>
-
-  <section id="pipeline">
-    <p class="eyebrow">How I work</p>
-    <h2>One pattern, four domains</h2>
-    <p style="max-width:680px;color:#282c26">Nearly everything I've shipped — market data, XBRL filings, news labeling, computer vision — follows the same shape: get the data in reliably, prove it's correct, turn it into a model or signal, and put it behind a service someone can actually call.</p>
-    <div class="pipeline">
-      <svg viewBox="0 0 860 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Four stage pipeline: Ingest, Validate, Model, Serve">
-        <line x1="70" y1="60" x2="790" y2="60" stroke="var(--line-strong)" stroke-width="1.5"/>
-        <g>
-          <circle cx="70" cy="60" r="7" fill="var(--paper)" stroke="var(--teal)" stroke-width="2.5"/>
-          <text x="70" y="98" text-anchor="middle" class="pipeline-stage-label">INGEST</text>
-          <text x="70" y="115" text-anchor="middle" class="pipeline-stage-sub">NSE feeds · XBRL · news</text>
-        </g>
-        <g>
-          <circle cx="310" cy="60" r="7" fill="var(--paper)" stroke="var(--teal)" stroke-width="2.5"/>
-          <text x="310" y="98" text-anchor="middle" class="pipeline-stage-label">VALIDATE</text>
-          <text x="310" y="115" text-anchor="middle" class="pipeline-stage-sub">schema · taxonomy checks</text>
-        </g>
-        <g>
-          <circle cx="550" cy="60" r="7" fill="var(--paper)" stroke="var(--teal)" stroke-width="2.5"/>
-          <text x="550" y="98" text-anchor="middle" class="pipeline-stage-label">MODEL</text>
-          <text x="550" y="115" text-anchor="middle" class="pipeline-stage-sub">FinBERT · GPT-4o-mini · YOLO11n</text>
-        </g>
-        <g>
-          <circle cx="790" cy="60" r="7" fill="var(--paper)" stroke="var(--teal)" stroke-width="2.5"/>
-          <text x="790" y="98" text-anchor="middle" class="pipeline-stage-label">SERVE</text>
-          <text x="790" y="115" text-anchor="middle" class="pipeline-stage-sub">FastAPI · async jobs</text>
-        </g>
-      </svg>
-      <p class="pipeline-caption">// same shape behind Sthiti's fetch–collect–prepare–insert pipeline, the XBRL taxonomy mapper, news_signal_llm, and the traffic-violation CV stack.</p>
-    </div>
   </section>
 
   <section id="results">
