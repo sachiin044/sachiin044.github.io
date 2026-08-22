@@ -1,266 +1,310 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Sachin Gupta — AI/ML engineer building backend systems, applied ML pipelines, LLM applications, and research-oriented engineering systems.">
-  <title>Sachin Gupta | AI/ML &amp; Backend Systems</title>
-  <style>
-    :root{
-      --text:#171717;
-      --muted:#5f6368;
-      --link:#174a8b;
-      --border:#d9dde2;
-      --soft:#f6f7f9;
-      --max:900px
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Sachin Gupta — AI/ML engineer building backend systems, applied ML pipelines, LLM applications, and research-oriented engineering systems.">
+<title>Sachin Gupta | AI/ML &amp; Backend Systems</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#12161c;
+    --paper:#f6f6f3;
+    --paper-alt:#ececE6;
+    --line:#d9dbd2;
+    --line-strong:#b9bcb2;
+    --teal:#2f6f5e;
+    --teal-deep:#1f4c40;
+    --amber:#b8752b;
+    --muted:#6a6f66;
+    --max:920px;
+    --radius:3px;
+  }
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  ::selection{background:var(--teal);color:var(--paper)}
 
-    body{
-      margin:0;
-      background:#fff;
-      color:var(--text);
-      font:15px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      text-align:justify
-    }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font:16px/1.65 'Inter',system-ui,-apple-system,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
 
-    a{color:var(--link);text-decoration:none}
-    a:hover{text-decoration:underline}
+  .mono{font-family:'IBM Plex Mono',ui-monospace,monospace}
 
-    .wrap{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:48px 24px 72px
-    }
+  a{color:var(--teal-deep);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s ease, color .15s ease}
+  a:hover{border-bottom-color:var(--teal-deep)}
 
-    header{
-      padding-bottom:28px;
-      border-bottom:1px solid var(--border);
-      text-align:left
-    }
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
 
-    .top{
-      display:grid;
-      grid-template-columns:160px 1fr;
-      gap:24px;
-      align-items:start
-    }
+  /* ---------- header ---------- */
+  header.hero{
+    position:relative;
+    padding:56px 0 40px;
+    background:
+      radial-gradient(circle at 1px 1px, var(--line) 1px, transparent 1.4px) 0 0/22px 22px,
+      var(--paper);
+    border-bottom:1px solid var(--line-strong);
+  }
 
-    .photo{
-      width:160px;
-      height:160px;
-      object-fit:cover;
-      object-position:center 25%;
-      border-radius:6px;
-      background:#f1f3f5
-    }
+  .top{
+    display:grid;
+    grid-template-columns:148px 1fr;
+    gap:32px;
+    align-items:start;
+  }
 
-    h1{
-      font-size:32px;
-      line-height:1.15;
-      margin:0 0 8px;
-      font-weight:650;
-      letter-spacing:-.5px;
-      text-align:left
-    }
+  .photo{
+    width:148px;height:148px;
+    object-fit:cover;object-position:center 25%;
+    border-radius:var(--radius);
+    background:var(--paper-alt);
+    border:1px solid var(--line-strong);
+  }
 
-    .role{
-      font-size:17px;
-      margin:0 0 6px;
-      text-align:left
-    }
+  .status-line{
+    display:flex;align-items:center;gap:8px;
+    font-size:12px;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--teal-deep);
+    margin:0 0 14px;
+  }
+  .status-dot{
+    width:7px;height:7px;border-radius:50%;
+    background:var(--teal);
+    box-shadow:0 0 0 3px rgba(47,111,94,.15);
+    flex:none;
+  }
 
-    .meta{
-      color:var(--muted);
-      margin:0 0 14px;
-      text-align:left
-    }
+  h1{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:clamp(32px,4.4vw,44px);
+    line-height:1.05;
+    letter-spacing:-.02em;
+    font-weight:700;
+    margin:0 0 10px;
+  }
 
-    .links{
-      display:flex;
-      gap:16px;
-      flex-wrap:wrap;
-      font-size:14px;
-      text-align:left
-    }
+  .role{
+    font-size:15px;
+    color:var(--ink);
+    margin:0 0 6px;
+    font-weight:500;
+  }
 
-    nav{
-      display:flex;
-      gap:18px;
-      flex-wrap:wrap;
-      padding:12px 0;
-      border-bottom:1px solid var(--border);
-      font-size:13px;
-      text-align:left
-    }
+  .meta{color:var(--muted);font-size:14px;margin:0 0 20px}
 
-    nav a{color:var(--muted)}
-    nav a:hover{color:var(--link)}
+  .links{display:flex;gap:10px;flex-wrap:wrap}
+  .links a{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;
+    padding:7px 12px;
+    border:1px solid var(--line-strong);
+    border-radius:var(--radius);
+    color:var(--ink);
+    background:#fff;
+  }
+  .links a:hover{border-color:var(--teal);color:var(--teal-deep);border-bottom-color:var(--teal)}
 
-    section{padding-top:36px}
+  /* ---------- nav ---------- */
+  nav{
+    position:sticky;top:0;z-index:10;
+    display:flex;gap:2px;flex-wrap:wrap;
+    background:rgba(246,246,243,.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line-strong);
+  }
+  nav .wrap{display:flex;gap:4px;padding-top:0;padding-bottom:0}
+  nav a{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);
+    padding:14px 12px;
+    border-bottom:2px solid transparent;
+  }
+  nav a:hover{color:var(--teal-deep);border-bottom-color:var(--teal)}
 
-    h2{
-      font-size:13px;
-      letter-spacing:1.4px;
-      text-transform:uppercase;
-      margin:0 0 14px;
-      padding-bottom:7px;
-      border-bottom:1px solid var(--border);
-      font-weight:650;
-      text-align:left
-    }
+  /* ---------- sections ---------- */
+  section{padding-top:56px;padding-bottom:8px}
+  section:last-of-type{padding-bottom:56px}
 
-    p{margin:0 0 11px}
-    .intro{max-width:820px}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--amber);
+    margin:0 0 10px;
+  }
 
-    .results{
-      list-style:none;
-      margin:0;
-      padding:0
-    }
+  h2{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:22px;font-weight:600;letter-spacing:-.01em;
+    margin:0 0 22px;
+    padding-bottom:12px;
+    border-bottom:1px solid var(--line);
+  }
 
-    .results li{
-      display:grid;
-      grid-template-columns:55px 1fr;
-      gap:18px;
-      padding:11px 0;
-      border-bottom:1px solid #eee
-    }
+  p{margin:0 0 13px;max-width:700px}
+  .intro p{color:#282c26}
 
-    .results li > span:last-child{text-align:justify}
+  .lede{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:clamp(19px,2.4vw,23px);
+    line-height:1.4;
+    font-weight:600;
+    letter-spacing:-.01em;
+    max-width:760px;
+    margin:0 0 20px;
+  }
 
-    .year{
-      color:var(--muted);
-      font-size:13px;
-      text-align:left
-    }
+  .stat-chip{
+    display:inline-flex;align-items:center;gap:6px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    padding:4px 10px 4px 8px;
+    border:1px solid var(--line-strong);
+    border-radius:999px;
+    background:#fff;
+    margin-top:4px;
+  }
+  .stat-chip b{color:var(--teal-deep)}
 
-    .projects{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:16px
-    }
+  /* ---------- signature pipeline diagram ---------- */
+  .pipeline{
+    margin:38px 0 8px;
+    padding:26px 20px 20px;
+    border:1px solid var(--line-strong);
+    border-radius:var(--radius);
+    background:#fff;
+  }
+  .pipeline-caption{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;color:var(--muted);
+    margin-top:16px;max-width:none;
+  }
+  .pipeline svg{display:block;width:100%;height:auto}
+  .pipeline-stage-label{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;fill:var(--ink)}
+  .pipeline-stage-sub{font-family:'Inter',sans-serif;font-size:10.5px;fill:var(--muted)}
 
-    .card{
-      border:1px solid var(--border);
-      padding:16px;
-      border-radius:4px
-    }
+  /* ---------- selected work (log entries) ---------- */
+  .results{list-style:none;margin:0;padding:0}
+  .results li{
+    position:relative;
+    display:grid;
+    grid-template-columns:58px 1fr;
+    gap:16px;
+    padding:14px 0 14px 14px;
+    border-bottom:1px solid var(--line);
+  }
+  .results li::before{
+    content:"";position:absolute;left:0;top:14px;bottom:14px;width:2px;
+    background:var(--teal);opacity:.55;
+  }
+  .results li:hover::before{opacity:1}
+  .year{font-family:'IBM Plex Mono',monospace;color:var(--muted);font-size:13px;padding-top:1px}
+  .results li > span:last-child{margin:0}
 
-    .card h3{
-      margin:0 0 6px;
-      font-size:16px;
-      text-align:left
-    }
+  /* ---------- projects ---------- */
+  .projects{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .card{
+    border:1px solid var(--line-strong);
+    border-radius:var(--radius);
+    padding:20px;
+    background:#fff;
+    display:flex;flex-direction:column;
+  }
+  .card-tag{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--teal-deep);
+    margin-bottom:8px;
+  }
+  .card h3{margin:0 0 8px;font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600}
+  .card p{font-size:14px;color:#3a3f37;margin:0 0 12px;max-width:none}
+  .stack{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
+  .tag{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10.5px;
+    padding:3px 7px;
+    background:var(--paper-alt);
+    border:1px solid var(--line);
+    border-radius:2px;
+    color:#3f453b;
+  }
+  .card .actions{margin-top:auto}
+  .card .actions a{font-family:'IBM Plex Mono',monospace;font-size:12.5px}
 
-    .card p{
-      font-size:14px;
-      color:#45494e;
-      text-align:justify
-    }
+  /* ---------- experience ---------- */
+  .timeline{list-style:none;margin:0;padding:0}
+  .timeline li{
+    position:relative;
+    padding:16px 0 16px 22px;
+    border-bottom:1px solid var(--line);
+  }
+  .timeline li::before{
+    content:"";position:absolute;left:0;top:22px;
+    width:8px;height:8px;border-radius:50%;
+    background:var(--paper);border:2px solid var(--teal);
+  }
+  .timeline strong{display:block;font-size:15.5px;font-weight:600;margin-bottom:3px}
+  .timeline .org{
+    font-family:'IBM Plex Mono',monospace;
+    color:var(--muted);font-size:12.5px;display:block;margin-bottom:6px;
+  }
+  .timeline p{font-size:14.5px;color:#33372f;margin:0;max-width:660px}
 
-    .actions{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      font-size:13px;
-      margin-top:9px;
-      text-align:left
-    }
+  /* ---------- research grid ---------- */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px 32px}
+  .grid2 > div{
+    padding-left:16px;
+    border-left:2px solid var(--line-strong);
+  }
+  .grid2 strong{
+    display:block;margin-bottom:6px;
+    font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;
+  }
+  .grid2 p{font-size:14.5px;color:#33372f;margin:0;max-width:none}
 
-    .tag{
-      display:inline-block;
-      background:var(--soft);
-      border:1px solid #e6e9ed;
-      padding:2px 7px;
-      margin:7px 5px 0 0;
-      font-size:11px;
-      color:#3f454b;
-      text-align:left
-    }
+  /* ---------- contact / footer ---------- */
+  #contact p{max-width:600px}
+  .contact-row{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:14px;
+  }
 
-    .timeline{
-      list-style:none;
-      margin:0;
-      padding:0
-    }
+  footer{
+    margin-top:8px;
+    padding:20px 0 48px;
+    color:var(--muted);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;
+  }
 
-    .timeline li{
-      padding:12px 0;
-      border-bottom:1px solid #eee
-    }
+  @media(max-width:650px){
+    .top{grid-template-columns:1fr}
+    .photo{width:96px;height:96px}
+    .projects,.grid2{grid-template-columns:1fr}
+    .grid2 > div{padding-left:14px}
+    nav .wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+    section{padding-top:42px}
+  }
 
-    .timeline strong{
-      display:block;
-      font-size:15px;
-      text-align:left
-    }
-
-    .timeline span{
-      color:var(--muted);
-      font-size:13px;
-      text-align:left
-    }
-
-    .timeline p{text-align:justify}
-
-    .grid2{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:28px
-    }
-
-    .grid2 > div{
-      min-width:0
-    }
-
-    .grid2 strong{
-      display:block;
-      margin-bottom:4px;
-      text-align:left
-    }
-
-    .grid2 p{
-      text-align:justify
-    }
-
-    footer{
-      margin-top:50px;
-      padding-top:18px;
-      border-top:1px solid var(--border);
-      color:var(--muted);
-      font-size:13px;
-      text-align:left
-    }
-
-    @media(max-width:650px){
-      .top{grid-template-columns:1fr}
-
-      .photo{
-        width:110px;
-        height:110px
-      }
-
-      .projects,
-      .grid2{grid-template-columns:1fr}
-
-      .results li{
-        grid-template-columns:1fr;
-        gap:2px
-      }
-
-      .results li > span:last-child{text-align:justify}
-    }
-  </style>
+  @media(prefers-reduced-motion:reduce){
+    *{transition:none !important;scroll-behavior:auto !important}
+  }
+</style>
 </head>
 <body>
-<div class="wrap">
-  <header>
+
+<header class="hero">
+  <div class="wrap">
     <div class="top">
       <img class="photo" src="profile_original.jpeg" alt="Sachin Gupta">
       <div>
+        <p class="status-line"><span class="status-dot"></span>Open to software engineering &amp; applied AI roles</p>
         <h1>Sachin Gupta</h1>
         <p class="role">AI/ML Engineer · Backend Systems · Applied Research</p>
         <p class="meta">B.Tech Computer Science, KIIT Bhubaneswar · 2023–2027</p>
@@ -272,109 +316,183 @@
         </div>
       </div>
     </div>
-  </header>
+  </div>
+</header>
 
-  <nav aria-label="Primary">
+<nav aria-label="Primary">
+  <div class="wrap">
     <a href="#about">About</a>
-    <a href="#results">Selected Work</a>
+    <a href="#pipeline">How I work</a>
+    <a href="#results">Selected work</a>
     <a href="#projects">Projects</a>
     <a href="#experience">Experience</a>
     <a href="#research">Research</a>
     <a href="#contact">Contact</a>
-  </nav>
+  </div>
+</nav>
+
+<div class="wrap">
 
   <section id="about">
-    <h2>About</h2>
-    <p class="intro">I am a Computer Science student focused on building AI and backend systems that move beyond prototypes: data pipelines, machine learning services, LLM applications, and research-oriented systems. My work spans financial data engineering, financial NLP, retrieval-augmented generation, multi-agent APIs, and computer vision.</p>
-    <p class="intro">I am particularly interested in AI systems engineering, applied machine learning, and reliable software that connects data, models, and production-facing APIs. I was also ranked in the <strong>top 2%</strong> of KIITEE 2023 among 50,000+ applicants and received a <strong>Merit Scholarship</strong>.</p>
+    <p class="eyebrow">About</p>
+    <p class="lede">I build the systems that turn raw, messy data — market filings, news, video — into models and services people can actually rely on.</p>
+    <div class="intro">
+      <p>I'm a Computer Science student focused on AI and backend systems that go beyond prototypes: data pipelines, machine learning services, LLM applications, and research-oriented engineering. My work spans financial data engineering, financial NLP, retrieval-augmented generation, multi-agent APIs, and computer vision.</p>
+      <p>I care most about AI systems engineering — reliable software that connects data, models, and production-facing APIs, built the way I'd want to hand it off to someone else.</p>
+    </div>
+    <span class="stat-chip">Top <b>2%</b> of KIITEE 2023 · 50,000+ applicants · Merit Scholarship</span>
+  </section>
+
+  <section id="pipeline">
+    <p class="eyebrow">How I work</p>
+    <h2>One pattern, four domains</h2>
+    <p style="max-width:680px;color:#282c26">Nearly everything I've shipped — market data, XBRL filings, news labeling, computer vision — follows the same shape: get the data in reliably, prove it's correct, turn it into a model or signal, and put it behind a service someone can actually call.</p>
+    <div class="pipeline">
+      <svg viewBox="0 0 860 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Four stage pipeline: Ingest, Validate, Model, Serve">
+        <line x1="70" y1="60" x2="790" y2="60" stroke="var(--line-strong)" stroke-width="1.5"/>
+        <g>
+          <circle cx="70" cy="60" r="7" fill="var(--paper)" stroke="var(--teal)" stroke-width="2.5"/>
+          <text x="70" y="98" text-anchor="middle" class="pipeline-stage-label">INGEST</text>
+          <text x="70" y="115" text-anchor="middle" class="pipeline-stage-sub">NSE feeds · XBRL · news</text>
+        </g>
+        <g>
+          <circle cx="310" cy="60" r="7" fill="var(--paper)" stroke="var(--teal)" stroke-width="2.5"/>
+          <text x="310" y="98" text-anchor="middle" class="pipeline-stage-label">VALIDATE</text>
+          <text x="310" y="115" text-anchor="middle" class="pipeline-stage-sub">schema · taxonomy checks</text>
+        </g>
+        <g>
+          <circle cx="550" cy="60" r="7" fill="var(--paper)" stroke="var(--teal)" stroke-width="2.5"/>
+          <text x="550" y="98" text-anchor="middle" class="pipeline-stage-label">MODEL</text>
+          <text x="550" y="115" text-anchor="middle" class="pipeline-stage-sub">FinBERT · GPT-4o-mini · YOLO11n</text>
+        </g>
+        <g>
+          <circle cx="790" cy="60" r="7" fill="var(--paper)" stroke="var(--teal)" stroke-width="2.5"/>
+          <text x="790" y="98" text-anchor="middle" class="pipeline-stage-label">SERVE</text>
+          <text x="790" y="115" text-anchor="middle" class="pipeline-stage-sub">FastAPI · async jobs</text>
+        </g>
+      </svg>
+      <p class="pipeline-caption">// same shape behind Sthiti's fetch–collect–prepare–insert pipeline, the XBRL taxonomy mapper, news_signal_llm, and the traffic-violation CV stack.</p>
+    </div>
   </section>
 
   <section id="results">
-    <h2>Selected Work</h2>
+    <p class="eyebrow">2025 – 2026</p>
+    <h2>Selected work</h2>
     <ul class="results">
       <li><span class="year">2026</span><span>Built <strong>Sthiti</strong>, a Python/PostgreSQL feature pipeline processing 45,000+ feature records across 30 trading sessions using a four-stage fetch–collect–prepare–insert architecture.</span></li>
       <li><span class="year">2026</span><span>Built XBRL processing pipelines covering ~11,000 NSE Integrated Filings, with mappings validated across older and newer taxonomy generations.</span></li>
-      <li><span class="year">2026</span><span>Developed <strong>news_signal_llm</strong>, a FastAPI + GPT-4o-mini labeling pipeline with async batching and Pydantic validation; recorded ~98.5% success on a 200-article batch.</span></li>
+      <li><span class="year">2026</span><span>Developed <strong>news_signal_llm</strong>, a FastAPI + GPT-4o-mini labeling pipeline with async batching and Pydantic validation — ~98.5% success on a 200-article batch.</span></li>
       <li><span class="year">2025</span><span>Selected among the <strong>top 20 teams</strong> at the Hack-Nation Global AI Hackathon with the MIT Sloan AI Club.</span></li>
-      <li><span class="year">2025</span><span>Fine-tuned <strong>FinBERT</strong> on ~30,000 GPT-4o-mini-labeled NSE headlines, achieving macro-F1 0.8358 with temperature scaling and asymmetric thresholds.</span></li>
+      <li><span class="year">2025</span><span>Fine-tuned <strong>FinBERT</strong> on ~30,000 GPT-4o-mini-labeled NSE headlines, reaching macro-F1 0.8358 with temperature scaling and asymmetric thresholds.</span></li>
     </ul>
   </section>
 
   <section id="projects">
-    <h2>Selected Projects</h2>
+    <p class="eyebrow">Selected projects</p>
+    <h2>Things I've shipped</h2>
     <div class="projects">
-      <article class="card"><h3>Sthiti — NSE Feature Collection Pipeline</h3><p>Python/PostgreSQL data pipeline for NSE market, fundamentals, derivatives, news, and institutional-flow features across the Nifty 500 universe.</p><div><span class="tag">Python</span><span class="tag">PostgreSQL</span><span class="tag">ETL</span><span class="tag">Financial Data</span></div><div class="actions"><a href="https://github.com/sachiin044" target="_blank" rel="noopener">GitHub profile</a></div></article>
-      <article class="card"><h3>Repzy — Repository Intelligence</h3><p>RAG-based codebase assistant using commit-aware indexing to reduce redundant processing and ground answers in repository context.</p><div><span class="tag">RAG</span><span class="tag">FAISS</span><span class="tag">LangChain</span><span class="tag">FastAPI</span></div><div class="actions"><a href="https://github.com/sachiin044/Repzy" target="_blank" rel="noopener">GitHub</a></div></article>
-      <article class="card"><h3>NexaFlow AI — Multi-Agent Backend</h3><p>FastAPI orchestration layer that classifies intent and routes requests across modular services such as weather, food delivery, document/email generation, and calendar scheduling.</p><div><span class="tag">FastAPI</span><span class="tag">LLM</span><span class="tag">Multi-Agent</span><span class="tag">APIs</span></div><div class="actions"><a href="https://github.com/sachiin044/NexaFlow-AI" target="_blank" rel="noopener">GitHub</a></div></article>
-      <article class="card"><h3>Traffic Violation Detection &amp; Enforcement</h3><p>Computer-vision platform using custom YOLO11n models, ByteTrack, PaddleOCR, evidence packaging, and asynchronous processing for traffic violations.</p><div><span class="tag">YOLO11n</span><span class="tag">ByteTrack</span><span class="tag">PaddleOCR</span><span class="tag">FastAPI</span></div><div class="actions"><a href="https://github.com/sachiin044/traffic-violation-detector" target="_blank" rel="noopener">GitHub</a></div></article>
+      <article class="card">
+        <span class="card-tag">Data pipeline</span>
+        <h3>Sthiti — NSE Feature Collection Pipeline</h3>
+        <p>Python/PostgreSQL pipeline collecting market, fundamentals, derivatives, news, and institutional-flow features across the Nifty 500 universe.</p>
+        <div class="stack">
+          <span class="tag">Python</span><span class="tag">PostgreSQL</span><span class="tag">ETL</span><span class="tag">Financial Data</span>
+        </div>
+        <div class="actions"><a href="https://github.com/sachiin044" target="_blank" rel="noopener">GitHub profile →</a></div>
+      </article>
+      <article class="card">
+        <span class="card-tag">RAG system</span>
+        <h3>Repzy — Repository Intelligence</h3>
+        <p>Codebase assistant with commit-aware indexing, so only what changed gets reprocessed — answers stay grounded in the actual repository.</p>
+        <div class="stack">
+          <span class="tag">RAG</span><span class="tag">FAISS</span><span class="tag">LangChain</span><span class="tag">FastAPI</span>
+        </div>
+        <div class="actions"><a href="https://github.com/sachiin044/Repzy" target="_blank" rel="noopener">GitHub →</a></div>
+      </article>
+      <article class="card">
+        <span class="card-tag">Multi-agent</span>
+        <h3>NexaFlow AI — Multi-Agent Backend</h3>
+        <p>FastAPI orchestration layer that classifies intent and routes requests across modular services — weather, food delivery, document/email generation, calendar scheduling.</p>
+        <div class="stack">
+          <span class="tag">FastAPI</span><span class="tag">LLM</span><span class="tag">Multi-Agent</span><span class="tag">APIs</span>
+        </div>
+        <div class="actions"><a href="https://github.com/sachiin044/NexaFlow-AI" target="_blank" rel="noopener">GitHub →</a></div>
+      </article>
+      <article class="card">
+        <span class="card-tag">Computer vision</span>
+        <h3>Traffic Violation Detection &amp; Enforcement</h3>
+        <p>Computer-vision platform using custom YOLO11n models, ByteTrack, and PaddleOCR, with evidence packaging and asynchronous processing for enforcement workflows.</p>
+        <div class="stack">
+          <span class="tag">YOLO11n</span><span class="tag">ByteTrack</span><span class="tag">PaddleOCR</span><span class="tag">FastAPI</span>
+        </div>
+        <div class="actions"><a href="https://github.com/sachiin044/traffic-violation-detector" target="_blank" rel="noopener">GitHub →</a></div>
+      </article>
     </div>
   </section>
 
   <section id="experience">
-    <h2>Experience</h2>
+    <p class="eyebrow">Experience</p>
+    <h2>Where I've worked</h2>
     <ul class="timeline">
-      <li><strong>Product Development Trainee — Deep RL &amp; Applied AI in Finance</strong><span>DAKSPHERE Private Limited</span><p>Built financial data pipelines and ML components spanning NSE data ingestion, FinBERT sentiment, LLM-based news signals, and trading-system research.</p></li>
-      <li><strong>Software Engineering Intern — Automation &amp; Applied AI</strong><span>NeoPhyte Ambient Intelligence</span><p>Engineered CRM automation workflows integrating REST APIs, webhooks, and databases for 500+ active clients.</p></li>
-      <li><strong>AI &amp; Backend Developer Intern</strong><span>Programming With Maurya (PWM Group)</span><p>Developed a codebase-analysis platform with commit-aware updates for repositories containing thousands of files.</p></li>
-      <li><strong>Domain Lead — GenAI &amp; ML</strong><span>Konnexions Society · 2025–2026</span><p>Led GenAI and ML initiatives, structured a winter bootcamp roadmap, and reviewed member projects against production-oriented standards.</p></li>
+      <li>
+        <strong>Product Development Trainee — Deep RL &amp; Applied AI in Finance</strong>
+        <span class="org">DAKSPHERE Private Limited</span>
+        <p>Built financial data pipelines and ML components spanning NSE data ingestion, FinBERT sentiment scoring, and LLM-based news signals feeding trading-system research.</p>
+      </li>
+      <li>
+        <strong>Software Engineering Intern — Automation &amp; Applied AI</strong>
+        <span class="org">NeoPhyte Ambient Intelligence</span>
+        <p>Engineered CRM automation workflows — REST APIs, webhooks, and database integrations — in production for 500+ active clients.</p>
+      </li>
+      <li>
+        <strong>AI &amp; Backend Developer Intern</strong>
+        <span class="org">Programming With Maurya (PWM Group)</span>
+        <p>Built a commit-aware codebase-analysis platform that reprocesses only what changed across repositories with thousands of files.</p>
+      </li>
+      <li>
+        <strong>Domain Lead — GenAI &amp; ML</strong>
+        <span class="org">Konnexions Society · 2025–2026</span>
+        <p>Led GenAI and ML initiatives, structured a winter bootcamp roadmap, and reviewed member projects against production-oriented standards.</p>
+      </li>
     </ul>
   </section>
 
-<!-- KEEP YOUR EXISTING index.html EXACTLY THE SAME -->
-
-<!-- REPLACE ONLY THIS SECTION -->
-
   <section id="research">
-    <h2>Research Methodology</h2>
-  
+    <p class="eyebrow">Research methodology</p>
+    <h2>How I approach a problem</h2>
     <div class="grid2">
       <div>
-        <strong>LLM Evaluation</strong>
-        <p>
-          Designed structured evaluation pipelines using GPT-4o-mini,
-          pseudo-labeling, temperature calibration, and quantitative validation
-          to improve model reliability and reproducibility.
-        </p>
+        <strong>LLM evaluation</strong>
+        <p>Structured evaluation pipelines using GPT-4o-mini, pseudo-labeling, temperature calibration, and quantitative validation to improve model reliability and reproducibility.</p>
       </div>
-  
       <div>
-        <strong>Data Engineering</strong>
-        <p>
-          Built reproducible ETL workflows for XBRL, market data, and large-scale
-          feature generation with schema validation, deduplication, and data
-          consistency checks.
-        </p>
+        <strong>Data engineering</strong>
+        <p>Reproducible ETL workflows for XBRL, market data, and large-scale feature generation, with schema validation, deduplication, and consistency checks.</p>
       </div>
-  
       <div>
-        <strong>System Design</strong>
-        <p>
-          Architect modular FastAPI services with asynchronous processing, REST
-          APIs, background jobs, and production-oriented backend patterns for
-          scalable AI applications.
-        </p>
+        <strong>System design</strong>
+        <p>Modular FastAPI services with asynchronous processing, REST APIs, and background jobs — production-oriented backend patterns for scalable AI applications.</p>
       </div>
-  
       <div>
-        <strong>Experimental Research</strong>
-        <p>
-          Focused on financial NLP, retrieval-augmented generation,
-          reinforcement learning, and trustworthy AI through measurable
-          experiments, benchmarking, and reproducible methodologies.
-        </p>
+        <strong>Experimental research</strong>
+        <p>Financial NLP, retrieval-augmented generation, and reinforcement learning, grounded in measurable experiments, benchmarking, and reproducible methodology.</p>
       </div>
     </div>
   </section>
 
-<!-- EVERYTHING ELSE IN YOUR HTML REMAINS UNCHANGED -->
-
   <section id="contact">
-    <h2>Contact</h2>
+    <p class="eyebrow">Contact</p>
+    <h2>Get in touch</h2>
     <p>Interested in software engineering, AI/ML engineering, and applied research opportunities.</p>
-    <p><a href="mailto:royalsachingupta@gmail.com">royalsachingupta@gmail.com</a> · <a href="https://www.linkedin.com/in/sachiin04/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/sachiin044" target="_blank" rel="noopener">GitHub</a></p>
+    <p class="contact-row">
+      <a href="mailto:royalsachingupta@gmail.com">royalsachingupta@gmail.com</a> ·
+      <a href="https://www.linkedin.com/in/sachiin04/" target="_blank" rel="noopener">LinkedIn</a> ·
+      <a href="https://github.com/sachiin044" target="_blank" rel="noopener">GitHub</a>
+    </p>
   </section>
 
   <footer>© 2026 Sachin Gupta · B.Tech Computer Science, KIIT Bhubaneswar · 2023–2027</footer>
 </div>
+
 </body>
 </html>
