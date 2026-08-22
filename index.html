@@ -259,18 +259,16 @@
 
   <!-- HERO -->
   <div class="hero">
-    <!-- TODO: replace the div below with your photo: <img src="your-photo.jpg" alt="Sachin" /> -->
-    <div class="hero-placeholder">S</div>
+    <!-- TODO: replace the div below with your photo: <img src="your-photo.jpg" alt="Sachin Gupta" /> -->
+    <div class="hero-placeholder">SG</div>
     <div class="hero-info">
-      <h1>Sachin</h1>
+      <h1>Sachin Gupta</h1>
       <p class="title">B.Tech Computer Science &middot; Final Year, KIIT Bhubaneswar</p>
-      <p class="title" style="margin-bottom:8px;">Quantitative Finance &middot; Applied ML &middot; Incoming Analyst @ Tredence</p>
-      <p class="email"><!-- TODO: add your email --> sachin [AT] example.com</p>
+      <p class="title" style="margin-bottom:8px;">Quantitative Finance &middot; Applied ML &middot; Trading Systems</p>
+      <p class="email">royalsachingupta@gmail.com</p>
       <div class="social-links">
-        <!-- TODO: confirm/replace these URLs with your actual profiles -->
         <a href="https://github.com/sachiin044" target="_blank">GitHub</a>
-        <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
-        <a href="https://twitter.com/" target="_blank">Twitter/X</a>
+        <a href="https://linkedin.com/in/sachiin04" target="_blank">LinkedIn</a>
         <a href="#resume">CV</a>
       </div>
     </div>
@@ -290,20 +288,22 @@
   <section id="bio">
     <h2>Bio</h2>
     <p>
-      I'm a final-year B.Tech Computer Science student at <strong>KIIT, Bhubaneswar</strong>, with
-      an incoming Analyst offer at <strong>Tredence</strong>. My work sits at the intersection of
+      I'm a final-year B.Tech Computer Science student at <strong>KIIT, Bhubaneswar</strong>. My
+      work sits at the intersection of
       <strong>quantitative finance</strong>, <strong>applied machine learning</strong>, and
       <strong>trading systems</strong> for Indian equity markets, and I care about building
-      things that are production-grade rather than just notebook demos.
+      things that are production-grade rather than notebook demos.
     </p>
     <p>
-      Most of my recent work is centred on Indian equity market data and signals: a full
-      <strong>NSE data pipeline</strong> that extracts fundamentals and market-cap history
-      directly from XBRL filings and bhavcopy data, an LLM-based news labeling system
-      (<strong>news_signal_llm</strong>), and a fine-tuned FinBERT sentiment model
-      (<strong>india_sentiment_v1</strong>) calibrated for high-precision trading signals.
-      I've also designed a <strong>regime-aware trading agent</strong> that combines HMM regime
-      detection, SAC reinforcement learning, and CVaR risk constraints.
+      My current focus is <strong>Sthiti</strong>, a production Python/PostgreSQL feature
+      collection pipeline that ingests NSE bhavcopies, XBRL fundamentals, derivatives, news
+      sentiment, and institutional flow data across the Nifty 500 universe, and normalizes it
+      into a queryable feature store for backtesting and live premarket signal computation.
+      Alongside this, I've built an LLM-based news labeling system
+      (<strong>news_signal_llm</strong>) and a fine-tuned FinBERT sentiment model
+      (<strong>india_sentiment_v1</strong>) calibrated for high-precision trading signals, and
+      designed a <strong>regime-aware trading agent</strong> that combines HMM regime detection,
+      SAC reinforcement learning, and CVaR risk constraints.
     </p>
     <p>
       Outside of this, I'm active in competitive programming and AI/ML research, and I serve as
@@ -318,7 +318,11 @@
     <ul class="news-list">
       <li>
         <span class="news-date">[2026]</span>
-        <span>Accepted a <strong>pre-placement offer as Analyst at Tredence</strong>.</span>
+        <span>Shipped <strong>Sthiti</strong>, a production feature collection pipeline for NSE
+        equities &mdash; processing <strong>45,000+ feature records</strong> across
+        <strong>30 trading sessions</strong> with zero data corruption, backed by a 4-phase
+        fetch&ndash;collect&ndash;prepare&ndash;insert architecture across 3 PostgreSQL
+        databases.</span>
       </li>
       <li>
         <span class="news-date">[2026]</span>
@@ -356,6 +360,16 @@
   <section id="projects">
     <h2>Projects</h2>
     <div class="project-grid">
+
+      <div class="project-card">
+        <h3>Sthiti &mdash; NSE Feature Collection Pipeline</h3>
+        <p>Production Python/PostgreSQL ETL pipeline ingesting bhavcopies, XBRL fundamentals, derivatives, and news sentiment across 500+ equities; processed 45,000+ feature records across 30 trading sessions with zero data corruption via a 4-phase fetch&ndash;collect&ndash;prepare&ndash;insert architecture.</p>
+        <div class="tags">
+          <span class="tag">ETL</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">NSE</span>
+        </div>
+      </div>
 
       <div class="project-card">
         <h3>NSE Fundamentals &amp; Market-Cap Pipeline</h3>
@@ -407,11 +421,21 @@
       </div>
 
       <div class="project-card">
-        <h3>NexaFlow</h3>
-        <p>Multi-agent orchestration framework with intent classification for routing tasks between specialized agents.</p>
+        <h3>NexaFlow AI</h3>
+        <p>FastAPI-based multi-agent orchestration platform with LLM-driven intent classification, routing requests across microservices (weather, food delivery, PDF/email generation, calendar scheduling).</p>
         <div class="tags">
           <span class="tag">Multi-agent</span>
-          <span class="tag">Orchestration</span>
+          <span class="tag">FastAPI</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3>Traffic Violation Detection &amp; Enforcement</h3>
+        <p>Production platform using custom YOLO11n models, ByteTrack, and PaddleOCR to detect helmet, seatbelt, red-light, and parking violations, with automated challan generation and asynchronous video processing.</p>
+        <div class="tags">
+          <span class="tag">YOLO11n</span>
+          <span class="tag">Computer Vision</span>
+          <span class="tag">FastAPI</span>
         </div>
       </div>
 
@@ -428,7 +452,7 @@
 
       <li class="pub-entry">
         <p class="pub-title">india_sentiment_v1: A FinBERT Pipeline for NSE News Sentiment</p>
-        <p class="pub-authors"><strong>Sachin</strong></p>
+        <p class="pub-authors"><strong>Sachin Gupta</strong></p>
         <p class="pub-venue">Project Report. 2025&ndash;2026.</p>
         <div class="pub-links">
           <a href="#">Report</a>
@@ -438,7 +462,7 @@
 
       <li class="pub-entry">
         <p class="pub-title">Regime-Aware Risk-Sensitive Multi-Modal Trading Agent: Architecture Overview</p>
-        <p class="pub-authors"><strong>Sachin</strong></p>
+        <p class="pub-authors"><strong>Sachin Gupta</strong></p>
         <p class="pub-venue">Design Document. 2026.</p>
         <div class="pub-links">
           <a href="#">Slides</a>
@@ -447,7 +471,7 @@
 
       <li class="pub-entry">
         <p class="pub-title">news_signal_llm: Design and Evaluation of an LLM News-Labeling Pipeline</p>
-        <p class="pub-authors"><strong>Sachin</strong></p>
+        <p class="pub-authors"><strong>Sachin Gupta</strong></p>
         <p class="pub-venue">Design Document &amp; Speaking Guide. 2026.</p>
         <div class="pub-links">
           <a href="#">Doc</a>
@@ -462,22 +486,21 @@
     <h2>Experience &amp; Service</h2>
     <ul class="service-list">
       <li>
-        <span class="service-label">Analyst (Incoming) &mdash; Tredence</span>
-        &nbsp;|&nbsp; Pre-Placement Offer &nbsp;|&nbsp; 2026&ndash;
-      </li>
-      <li>
         <span class="service-label">Domain Lead, GenAI &amp; ML &mdash; Konnexions Society</span>
         &nbsp;|&nbsp; Leadership &nbsp;|&nbsp; 2025&ndash;2026
       </li>
       <li>
-        <span class="service-label">Intern &mdash; NeoPhyte Ambient Intelligence</span>
+        <span class="service-label">Product Development Trainee, Deep RL &amp; Applied AI in Finance &mdash; DAKSPHERE Private Limited</span>
       </li>
       <li>
-        <span class="service-label">Intern &mdash; PWM Group</span>
+        <span class="service-label">Software Engineering Intern &mdash; NeoPhyte Ambient Intelligence</span>
+      </li>
+      <li>
+        <span class="service-label">AI &amp; Backend Developer Intern &mdash; Programming With Maurya (PWM Group)</span>
       </li>
       <li>
         <span class="service-label">B.Tech Computer Science &mdash; KIIT, Bhubaneswar</span>
-        &nbsp;|&nbsp; 2022&ndash;2026
+        &nbsp;|&nbsp; 2023&ndash;2027
       </li>
     </ul>
   </section>
@@ -493,7 +516,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>Sachin &nbsp;&middot;&nbsp; <!-- TODO: add your email -->sachin [AT] example.com</p>
+    <p>Sachin Gupta &nbsp;&middot;&nbsp; royalsachingupta@gmail.com</p>
     <p style="margin-top:4px;">Website built on a template inspired by
       <a href="https://web.stanford.edu/~msaveski/" target="_blank">Prof. Martin Saveski</a>
       (via <a href="https://mittalshravika.github.io/" target="_blank">Shravika Mittal</a>).
