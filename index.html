@@ -417,40 +417,41 @@
         <div class="actions"><a href="https://github.com/sachiin044/traffic-violation-detector" target="_blank" rel="noopener">GitHub →</a></div>
       </div>
       <div class="diagram">
-        <svg viewBox="0 0 260 220" role="img" aria-label="Diagram: video frame flows through YOLO11n and ByteTrack detection, PaddleOCR plate reading, into an evidence packet queue">
+        <svg viewBox="0 0 260 150" role="img" aria-label="Diagram: video frame moves left to right through YOLO11n and ByteTrack detection, PaddleOCR plate reading, into an evidence packet">
           <defs>
             <marker id="arrow-cv" markerWidth="7" markerHeight="7" refX="5" refY="2.5" orient="auto">
               <path d="M0,0 L5,2.5 L0,5 Z" fill="var(--teal-deep)"/>
             </marker>
           </defs>
-          <circle cx="20" cy="24" r="10" fill="var(--teal-deep)"/>
-          <text x="20" y="28" text-anchor="middle" class="diagram-badge-num">1</text>
-          <rect x="38" y="8" width="212" height="34" rx="3" fill="#fff" stroke="var(--line-strong)"/>
-          <text x="50" y="26" class="diagram-stage-label">Video frame</text>
-          <text x="50" y="38" class="diagram-stage-sub">raw footage</text>
+          <circle cx="35.5" cy="22" r="8" fill="var(--teal-deep)"/>
+          <text x="35.5" y="25" text-anchor="middle" class="diagram-badge-num" style="font-size:8px">1</text>
+          <rect x="9" y="38" width="53" height="56" rx="3" fill="#fff" stroke="var(--line-strong)"/>
+          <text x="35.5" y="70" text-anchor="middle" class="diagram-stage-label" style="font-size:9px">Frame</text>
 
-          <line x1="130" y1="42" x2="130" y2="58" stroke="var(--teal-deep)" stroke-width="2" marker-end="url(#arrow-cv)"/>
+          <line x1="62" y1="66" x2="72" y2="66" stroke="var(--teal-deep)" stroke-width="2" marker-end="url(#arrow-cv)"/>
 
-          <circle cx="20" cy="76" r="10" fill="var(--teal-deep)"/>
-          <text x="20" y="80" text-anchor="middle" class="diagram-badge-num">2</text>
-          <rect x="38" y="60" width="212" height="34" rx="3" fill="#fff" stroke="var(--line-strong)"/>
-          <text x="50" y="78" class="diagram-stage-label">YOLO11n + ByteTrack</text>
-          <text x="50" y="90" class="diagram-stage-sub">detect &amp; track vehicles</text>
+          <circle cx="98.5" cy="22" r="8" fill="var(--teal-deep)"/>
+          <text x="98.5" y="25" text-anchor="middle" class="diagram-badge-num" style="font-size:8px">2</text>
+          <rect x="72" y="38" width="53" height="56" rx="3" fill="#fff" stroke="var(--line-strong)"/>
+          <text x="98.5" y="63" text-anchor="middle" class="diagram-stage-label" style="font-size:7.5px">YOLO11n</text>
+          <text x="98.5" y="75" text-anchor="middle" class="diagram-stage-label" style="font-size:7.5px">+ByteTrack</text>
 
-          <line x1="130" y1="94" x2="130" y2="110" stroke="var(--teal-deep)" stroke-width="2" marker-end="url(#arrow-cv)"/>
+          <line x1="125" y1="66" x2="135" y2="66" stroke="var(--teal-deep)" stroke-width="2" marker-end="url(#arrow-cv)"/>
 
-          <circle cx="20" cy="128" r="10" fill="var(--teal-deep)"/>
-          <text x="20" y="132" text-anchor="middle" class="diagram-badge-num">3</text>
-          <rect x="38" y="112" width="212" height="34" rx="3" fill="#fff" stroke="var(--line-strong)"/>
-          <text x="50" y="130" class="diagram-stage-label">PaddleOCR</text>
-          <text x="50" y="142" class="diagram-stage-sub">plate recognition</text>
+          <circle cx="161.5" cy="22" r="8" fill="var(--teal-deep)"/>
+          <text x="161.5" y="25" text-anchor="middle" class="diagram-badge-num" style="font-size:8px">3</text>
+          <rect x="135" y="38" width="53" height="56" rx="3" fill="#fff" stroke="var(--line-strong)"/>
+          <text x="161.5" y="70" text-anchor="middle" class="diagram-stage-label" style="font-size:8px">PaddleOCR</text>
 
-          <line x1="130" y1="146" x2="130" y2="162" stroke="var(--teal-deep)" stroke-width="2" marker-end="url(#arrow-cv)"/>
+          <line x1="188" y1="66" x2="198" y2="66" stroke="var(--teal-deep)" stroke-width="2" marker-end="url(#arrow-cv)"/>
 
-          <circle cx="20" cy="184" r="10" fill="var(--amber)"/>
-          <text x="20" y="188" text-anchor="middle" class="diagram-badge-num">4</text>
-          <rect x="38" y="168" width="212" height="32" rx="3" fill="var(--paper-alt)" stroke="var(--amber)"/>
-          <text x="50" y="188" class="diagram-stage-label">Evidence packet · async queue</text>
+          <circle cx="224.5" cy="22" r="8" fill="var(--amber)"/>
+          <text x="224.5" y="25" text-anchor="middle" class="diagram-badge-num" style="font-size:8px">4</text>
+          <rect x="198" y="38" width="53" height="56" rx="3" fill="var(--paper-alt)" stroke="var(--amber)"/>
+          <text x="224.5" y="63" text-anchor="middle" class="diagram-stage-label" style="font-size:7.5px">Evidence</text>
+          <text x="224.5" y="75" text-anchor="middle" class="diagram-stage-label" style="font-size:7.5px">packet</text>
+
+          <text x="130" y="118" text-anchor="middle" class="diagram-stage-sub">per-frame, in sequence · async queue</text>
         </svg>
       </div>
     </article>
@@ -466,40 +467,47 @@
         <div class="actions"><a href="https://github.com/sachiin044/Repzy" target="_blank" rel="noopener">GitHub →</a></div>
       </div>
       <div class="diagram">
-        <svg viewBox="0 0 260 220" role="img" aria-label="Diagram: git commit flows through changed-file detection, FAISS embedding index, into a grounded LLM answer">
+        <svg viewBox="0 0 260 220" role="img" aria-label="Diagram: an indexing path (git commit, changed files, FAISS index) and a separate query-time path (user question) converge into one grounded answer">
           <defs>
             <marker id="arrow-rag" markerWidth="7" markerHeight="7" refX="5" refY="2.5" orient="auto">
               <path d="M0,0 L5,2.5 L0,5 Z" fill="var(--teal-deep)"/>
             </marker>
           </defs>
-          <circle cx="20" cy="24" r="10" fill="var(--teal-deep)"/>
-          <text x="20" y="28" text-anchor="middle" class="diagram-badge-num">1</text>
-          <rect x="38" y="8" width="212" height="34" rx="3" fill="#fff" stroke="var(--line-strong)"/>
-          <text x="50" y="26" class="diagram-stage-label">Git commit</text>
-          <text x="50" y="38" class="diagram-stage-sub">diff detected</text>
 
-          <line x1="130" y1="42" x2="130" y2="58" stroke="var(--teal-deep)" stroke-width="2" marker-end="url(#arrow-rag)"/>
+          <circle cx="20" cy="23" r="9" fill="var(--teal-deep)"/>
+          <text x="20" y="27" text-anchor="middle" class="diagram-badge-num" style="font-size:9px">1</text>
+          <rect x="38" y="8" width="100" height="30" rx="3" fill="#fff" stroke="var(--line-strong)"/>
+          <text x="45" y="24" class="diagram-stage-label" style="font-size:9px">Git commit</text>
+          <text x="45" y="34" class="diagram-stage-sub" style="font-size:7.5px">diff detected</text>
 
-          <circle cx="20" cy="76" r="10" fill="var(--teal-deep)"/>
-          <text x="20" y="80" text-anchor="middle" class="diagram-badge-num">2</text>
-          <rect x="38" y="60" width="212" height="34" rx="3" fill="#fff" stroke="var(--line-strong)"/>
-          <text x="50" y="78" class="diagram-stage-label">Changed files only</text>
-          <text x="50" y="90" class="diagram-stage-sub">incremental reprocessing</text>
+          <line x1="88" y1="38" x2="88" y2="46" stroke="var(--teal-deep)" stroke-width="2" marker-end="url(#arrow-rag)"/>
 
-          <line x1="130" y1="94" x2="130" y2="110" stroke="var(--teal-deep)" stroke-width="2" marker-end="url(#arrow-rag)"/>
+          <circle cx="20" cy="61" r="9" fill="var(--teal-deep)"/>
+          <text x="20" y="65" text-anchor="middle" class="diagram-badge-num" style="font-size:9px">2</text>
+          <rect x="38" y="46" width="100" height="30" rx="3" fill="#fff" stroke="var(--line-strong)"/>
+          <text x="45" y="62" class="diagram-stage-label" style="font-size:9px">Changed files</text>
+          <text x="45" y="72" class="diagram-stage-sub" style="font-size:7.5px">incremental only</text>
 
-          <circle cx="20" cy="128" r="10" fill="var(--teal-deep)"/>
-          <text x="20" y="132" text-anchor="middle" class="diagram-badge-num">3</text>
-          <rect x="38" y="112" width="212" height="34" rx="3" fill="#fff" stroke="var(--line-strong)"/>
-          <text x="50" y="130" class="diagram-stage-label">FAISS index</text>
-          <text x="50" y="142" class="diagram-stage-sub">embed &amp; store</text>
+          <line x1="88" y1="76" x2="88" y2="84" stroke="var(--teal-deep)" stroke-width="2" marker-end="url(#arrow-rag)"/>
 
-          <line x1="130" y1="146" x2="130" y2="162" stroke="var(--teal-deep)" stroke-width="2" marker-end="url(#arrow-rag)"/>
+          <circle cx="20" cy="99" r="9" fill="var(--teal-deep)"/>
+          <text x="20" y="103" text-anchor="middle" class="diagram-badge-num" style="font-size:9px">3</text>
+          <rect x="38" y="84" width="100" height="30" rx="3" fill="#fff" stroke="var(--line-strong)"/>
+          <text x="45" y="100" class="diagram-stage-label" style="font-size:9px">FAISS index</text>
+          <text x="45" y="110" class="diagram-stage-sub" style="font-size:7.5px">embed &amp; store</text>
 
-          <circle cx="20" cy="184" r="10" fill="var(--amber)"/>
-          <text x="20" y="188" text-anchor="middle" class="diagram-badge-num">4</text>
-          <rect x="38" y="168" width="212" height="32" rx="3" fill="var(--paper-alt)" stroke="var(--amber)"/>
-          <text x="50" y="188" class="diagram-stage-label">Grounded answer</text>
+          <text x="200" y="36" text-anchor="middle" fill="var(--amber)" font-family="'IBM Plex Mono',monospace" font-size="7.5" letter-spacing="1">AT QUERY TIME</text>
+          <rect x="150" y="46" width="100" height="30" rx="3" fill="#fff" stroke="var(--line-strong)"/>
+          <text x="157" y="62" class="diagram-stage-label" style="font-size:9px">User question</text>
+          <text x="157" y="72" class="diagram-stage-sub" style="font-size:7.5px">runtime, not indexed</text>
+
+          <line x1="88" y1="114" x2="112" y2="170" stroke="var(--teal-deep)" stroke-width="2" marker-end="url(#arrow-rag)"/>
+          <line x1="200" y1="76" x2="178" y2="170" stroke="var(--teal-deep)" stroke-width="2" marker-end="url(#arrow-rag)"/>
+
+          <circle cx="20" cy="186" r="10" fill="var(--amber)"/>
+          <text x="20" y="190" text-anchor="middle" class="diagram-badge-num">4</text>
+          <rect x="38" y="170" width="212" height="32" rx="3" fill="var(--paper-alt)" stroke="var(--amber)"/>
+          <text x="50" y="190" class="diagram-stage-label">Grounded answer</text>
         </svg>
       </div>
     </article>
@@ -553,9 +561,9 @@
           <rect x="212" y="110" width="52" height="30" rx="3" fill="#fff" stroke="var(--line-strong)"/>
           <text x="216" y="129" class="diagram-stage-label" style="font-size:8.5px">Calendar</text>
 
-          <line x1="50" y1="140" x2="122" y2="164" stroke="var(--teal-deep)" stroke-width="1.6"/>
-          <line x1="112" y1="140" x2="126" y2="164" stroke="var(--teal-deep)" stroke-width="1.6"/>
-          <line x1="174" y1="140" x2="134" y2="164" stroke="var(--teal-deep)" stroke-width="1.6"/>
+          <line x1="50" y1="140" x2="122" y2="164" stroke="var(--teal-deep)" stroke-width="1.6" marker-end="url(#arrow-nx)"/>
+          <line x1="112" y1="140" x2="126" y2="164" stroke="var(--teal-deep)" stroke-width="1.6" marker-end="url(#arrow-nx)"/>
+          <line x1="174" y1="140" x2="134" y2="164" stroke="var(--teal-deep)" stroke-width="1.6" marker-end="url(#arrow-nx)"/>
           <line x1="236" y1="140" x2="138" y2="164" stroke="var(--teal-deep)" stroke-width="1.6" marker-end="url(#arrow-nx)"/>
 
           <circle cx="20" cy="184" r="10" fill="var(--amber)"/>
